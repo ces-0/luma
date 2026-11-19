@@ -1,0 +1,9 @@
+# Experimental OnePlus 5T fragment, merged over arch/arm64/configs/defconfig
+# of SimplyLuma/linux luma-7.2 (Linux 7.2.15). Not a postmarketOS 6.0 config.
+#
+# Generic phone instructions require FUSE built in before a device package
+# can be layered. defconfig sets it as a module.
+CONFIG_FUSE_FS=y
+
+# This builder does not need debug info. Not a product-kernel decision.
+# CONFIG_DEBUG_INFO is not set

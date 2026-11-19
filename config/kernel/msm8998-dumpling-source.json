@@ -1,0 +1,39 @@
+{
+  "schema": "org.projectluma.dumpling-kernel-pin/v1",
+  "repository": "https://github.com/SimplyLuma/linux",
+  "branch_checked_out": "luma-7.2",
+  "commit": "497791a0a96b866d90add64041c47acdff49cae6",
+  "commit_subject": "Linux 7.2.15",
+  "family_branch": "msm8998",
+  "family_branch_present_on_2026_11_19": false,
+  "luma_kernel_tag_name_in_device_toml": "luma-kernel-7.2.15",
+  "luma_kernel_tag_present_on_2026_11_19": false,
+  "only_tag_seen_on_2026_11_19": "luma-fp6-alpha1-7.1.2-luma-fp-ims1.gmu2.selinux1",
+  "device_tree": "arch/arm64/boot/dts/qcom/msm8998-oneplus-dumpling.dts",
+  "device_tree_compatible": ["oneplus,dumpling", "qcom,msm8998"],
+  "device_tree_spdx": "BSD-3-Clause",
+  "device_tree_copyright": "Copyright (c) 2021, Jami Kettunen <jamipkettunen@gmail.com>",
+  "common_dtsi_spdx": "BSD-3-Clause",
+  "soc_dtsi_spdx": "GPL-2.0",
+  "kernel_license": "GPL-2.0-only",
+  "hardware_prerequisite": "unverified-pending",
+  "hardware_prerequisite_note": "No evidence this user's OnePlus 5T boots postmarketOS. Official generic page uses postmarketOS as an example of a known-good image to prove before a RAM boot. That example is not evidence for this phone.",
+  "phone_operations": "forbidden",
+  "pmaports_kernel_lead": {
+    "package": "linux-postmarketos-qcom-msm8998",
+    "pkgver": "6.0",
+    "pkgrel": 2,
+    "commit": "90169e6e9fee29fae14aeac0a905246be5ce6304",
+    "commit_subject": "arm64: msm8998_defconfig: Add for 6.0",
+    "commit_date": "2022-10-09",
+    "url": "https://gitlab.com/msm8998-mainline/linux",
+    "note": "Current pmaports package is 6.0 from 2022, not 5.15. The 5.15 Phosh photo caption on the wiki is a historical lead. This port compiles the Luma 7.2.15 tree, which already contains the dumpling DTS."
+  },
+  "pmaports_deviceinfo": {
+    "url": "https://gitlab.com/postmarketOS/pmaports/-/raw/master/device/testing/device-oneplus-dumpling/deviceinfo",
+    "pagesize": 4096,
+    "append_dtb": true,
+    "header_version_field": "absent",
+    "kernel_cmdline_mainline": "clk_ignore_unused quiet loglevel=5 modprobe.blacklist=ipa"
+  }
+}

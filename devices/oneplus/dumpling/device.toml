@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: Apache-2.0
+schema = 1
+vendor = "oneplus"
+codename = "dumpling"
+name = "OnePlus 5T"
+marketing_name = "OnePlus 5T"
+form_factor = "phone"
+year = 2017
+soc = "qcom/msm8998"
+tier = "experimental"
+maintainers = ["@ces-0"]
+
+[kernel]
+# docs/kernel.md names a release luma-kernel-<version>. On 2026-11-19
+# SimplyLuma/linux had no luma-kernel-* tag and no msm8998 branch.
+# scripts/kernel/build-dumpling.sh checks out the commit in
+# config/kernel/msm8998-dumpling-source.json and refuses any other tree.
+# The tag string below is that release name, not a tag object that exists.
+tag = "luma-kernel-7.2.15"
+release = "7.2.15"
+config = "config/kernel/msm8998-dumpling.config"
+config_fragments = ["config/kernel/msm8998-dumpling.fragment"]
+dtb = "qcom/msm8998-oneplus-dumpling.dtb"
+
+[boot]
+config = "boot.toml"
+
+[firmware]
+# No proprietary bytes and no unverified hashes. The owner extracts firmware
+# from their own OxygenOS 10.0.1 image later; this tree does not download it.
+manifest = "firmware.manifest"
+manifest_sha256 = "ef1745f080208fc4b524522f3402b3d12a8abdb56b83005222171a62006e16db"
+files = 0
+store = "/usr/lib/firmware"
+
+[install]
+guide = "INSTALL.md"
+method = "fastboot"
+# Never erase or write these. modemst1/modemst2 hold the phone's own modem
+# settings. This profile has no install procedure that writes anything.
+preserve = ["modemst1", "modemst2", "fsg", "fsc", "persist"]
+
+[updates]
+ostree_ref = "luma/1/aarch64/nightly"
