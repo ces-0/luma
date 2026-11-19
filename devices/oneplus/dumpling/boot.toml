@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: Apache-2.0
+# Build-only boot policy. scripts/kernel/build-dumpling.sh reads the fixed
+# command line and the SoC offsets. It does not write a phone.
+#
+# Header bytes are version 0, not the schema's android-boot-v2 enum. See
+# socs/qcom/msm8998/soc.toml. The packer rejects any other header version.
+schema = 1
+partition = "boot"
+
+[cmdline]
+# Fixed arguments from the current postmarketOS deviceinfo mainline command
+# line, plus a console and the usual root wait. clk_ignore_unused and the
+# ipa blacklist are that deviceinfo's lead ("or we don't get graphics"), not
+# a result from this phone or from Linux 7.2.15.
+args = [
+  "clk_ignore_unused",
+  "quiet",
+  "loglevel=5",
+  "modprobe.blacklist=ipa",
+  "console=tty0",
+  "rootwait",
+  "ro",
+  "init=/init",
+]
+# A future image that actually starts the generic ARM OS fills these in.
+# The experimental local image does not: its init is a placeholder.
+generated = ["pmos_root_uuid", "pmos_boot_uuid", "ostree"]
+forbidden = ["selinux=0", "enforcing=0", "lsm="]
+
+[avb]
+# No footer is added. vbmeta is never written.
+footer = "none"
+vbmeta = "untouched"
+
+[dtbo]
+# No dtbo is produced or written. Whether this phone has a dtbo partition
+# was not read from the device.
+policy = "none"

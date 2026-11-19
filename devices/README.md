@@ -12,6 +12,7 @@ builds from (SimplyLuma/linux `luma-7.2` plus one branch per SoC family).
 | Fairphone 6 | [fairphone/fp6](fairphone/fp6) | Qualcomm SM7635 (milos) | supported |
 | Raspberry Pi 5 | [raspberrypi/rpi5](raspberrypi/rpi5) | Broadcom BCM2712 | experimental |
 | Surface Pro 12-inch | [microsoft/sp12in](microsoft/sp12in) | Qualcomm X1P-42-100 (purwa) | experimental |
+| OnePlus 5T | [oneplus/dumpling](oneplus/dumpling) | Qualcomm MSM8998 (Snapdragon 835) | experimental |
 
 ## Phones: one image plus a device kit
 
@@ -89,3 +90,4 @@ the kernel command line turns the service off for `fastboot boot` test kernels.
 |---|---|---|
 | Fairphone 6 | `luma-fairphone-fp6`: modules, firmware, platform, IMS, eSIM, modem stack | boot image + `…-kit.sparse` |
 | Pixel 9 (`google,tokay`) | none yet: modules and firmware are in the boot image | boot image only |
+| OnePlus 5T | none | none. Local compile only. PostmarketOS on this phone is unverified. No kit, no flash, no RAM boot from this tree |

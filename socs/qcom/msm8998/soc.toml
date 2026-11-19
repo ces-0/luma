@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: Apache-2.0
+# Qualcomm MSM8998 (Snapdragon 835), shared by the OnePlus 5T (dumpling).
+# SimplyLuma/linux has no msm8998 branch as of 2026-11-19. The build pin is
+# the luma-7.2 commit in config/kernel/msm8998-dumpling-source.json.
+schema = 1
+vendor = "qcom"
+family = "msm8998"
+name = "Qualcomm MSM8998 (Snapdragon 835)"
+arch = "aarch64"
+part_numbers = ["MSM8998"]
+
+[kernel]
+repository = "https://github.com/SimplyLuma/linux"
+branch = "msm8998"
+upstream = "https://gitlab.com/msm8998-mainline/linux"
+dts_directory = "arch/arm64/boot/dts/qcom"
+
+[boot]
+# The bytes scripts/kernel/build-dumpling.sh writes are legacy header version 0
+# with the DTB appended to the gzipped kernel, matching the current
+# postmarketOS deviceinfo (no header_version, append_dtb=true). This schema
+# has no version-0 value. The build script rejects every other header version.
+# Nothing in this tree writes that image to a phone.
+format = "android-boot-v2"
+page_size = 4096
+# deviceinfo has no A/B slot names. Not read from this phone's partition table.
+slots = "a-only"
+dtb_in_boot_image = true
+
+[boot.offsets]
+# postmarketOS device-oneplus-dumpling deviceinfo, master, 2026-11-19.
+base = 0x00000000
+kernel = 0x00008000
+ramdisk = 0x01000000
+second = 0x00f00000
+tags = 0x00000100
+dtb = 0x00000000
+
+[firmware]
+# Names only. Proprietary bytes stay out of git.
+directory = "qcom/msm8998"

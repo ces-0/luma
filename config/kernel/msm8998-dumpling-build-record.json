@@ -1,0 +1,29 @@
+{
+  "label": "EXPERIMENTAL AND NOT HARDWARE TESTED",
+  "hardware_prerequisite": "unverified-pending",
+  "phone_operations": "forbidden",
+  "hardware_tested": false,
+  "boot_success": false,
+  "modules_built": false,
+  "initramfs_kind": "placeholder-static-init-plus-unexecuted-resolver-scripts",
+  "ostree_command_line_applied": false,
+  "header_version": 0,
+  "kernel_commit": "497791a0a96b866d90add64041c47acdff49cae6",
+  "image_file": "Linux kernel ARM64 boot executable Image, little-endian, 4K pages",
+  "init_file": "ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=0a6ed87ccd5df56f5a699f15e8f549117d59f3c3, for GNU/Linux 3.7.0, not stripped",
+  "cmdline": "clk_ignore_unused quiet loglevel=5 modprobe.blacklist=ipa console=tty0 rootwait ro init=/init",
+  "jobs": 2,
+  "cross_compile": "aarch64-linux-gnu-",
+  "host": "Linux-6.12.113+-x86_64-with-glibc2.39",
+  "sha256": {
+    "Image": "6d0c2ecc816fd36b9ae60f127526693cfcbaa3131c1db9bbc9028c48da260795",
+    "Image.gz": "c1a29bf0698047499e4549ad977afc789799cee13b091e1fcccf271798839734",
+    "msm8998-oneplus-dumpling.dtb": "92ead5405ff12a9a0bed485ef0bb074b464087083a966d4ab9810f1151facf01",
+    "kernel.gz-dtb": "584aebd618c369e2bc36df433a7c832da19235209a33a2975f3b8f8f421f39bb",
+    "initramfs.cpio.gz": "1068847eb252c22b03d7e682e86f8aca44132a0376ad8b90b431ff586838a5e6",
+    "luma-dumpling-EXPERIMENTAL-NOT-HARDWARE-TESTED.boot": "e6efddc61a81c48f43922ffbda715eb2e31fc94630bc76b3d368ce788aec2628",
+    "config": "442fb17325b49e70d4db5649b2858a85b82a7a1386570bffe2cc3ff1c9ee3de6"
+  },
+  "boot_magic": "ANDROID!",
+  "boot_header_version_field": 0
+}
